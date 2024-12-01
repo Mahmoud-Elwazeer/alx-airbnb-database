@@ -1,4 +1,6 @@
 
+-- Objective: Write both correlated and non-correlated subqueries.
+
 
 USE airbnb_db;
 
