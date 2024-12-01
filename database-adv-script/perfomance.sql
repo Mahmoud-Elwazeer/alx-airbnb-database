@@ -11,6 +11,9 @@ FROM Booking b
 JOIN User u ON b.userId = u.id
 JOIN Property p ON b.propertyId = p.id
 LEFT JOIN Payment pay ON b.id = pay.bookingId
+WHERE 
+    b.status = 'confirmed'
+    AND b.total_price > 100
 GROUP BY b.start_date;
 
 -- Performance Analysis
@@ -22,6 +25,9 @@ FROM Booking b
 JOIN User u ON b.userId = u.id
 JOIN Property p ON b.propertyId = p.id
 LEFT JOIN Payment pay ON b.id = pay.bookingId
+WHERE 
+    b.status = 'confirmed'
+    AND b.total_price > 100
 GROUP BY b.start_date;
 
 -- Optimized Query with Indexing
@@ -39,6 +45,9 @@ FROM Booking b
 JOIN User u ON b.userId = u.id
 JOIN Property p ON b.propertyId = p.id
 LEFT JOIN Payment pay ON b.id = pay.bookingId
+WHERE 
+    b.status = 'confirmed'
+    AND b.total_price > 100
 GROUP BY b.start_date;
 
 -- Performance Analysis
@@ -50,4 +59,7 @@ FROM Booking b
 JOIN User u ON b.userId = u.id
 JOIN Property p ON b.propertyId = p.id
 LEFT JOIN Payment pay ON b.id = pay.bookingId
+WHERE 
+    b.status = 'confirmed'
+    AND b.total_price > 100
 GROUP BY b.start_date;
