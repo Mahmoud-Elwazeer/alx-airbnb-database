@@ -13,12 +13,12 @@ CREATE INDEX idx_booking_status ON Booking(status);
 CREATE INDEX idx_payment_booking ON Payment(bookingId);
 
 
-EXPLAIN SELECT * FROM Booking b
+EXPLAIN ANALYZE SELECT * FROM Booking b
 JOIN Property p ON b.property_id = p.property_id
 JOIN User u ON b.user_id = u.user_id
 WHERE b.status = 'confirmed';
 
-ANALYZE SELECT * FROM Booking b
+EXPLAIN ANALYZE SELECT * FROM Booking b
 JOIN Property p ON b.property_id = p.property_id
 JOIN User u ON b.user_id = u.user_id
 WHERE b.status = 'confirmed';
